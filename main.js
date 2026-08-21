@@ -38,4 +38,29 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => { btn.textContent = original; btn.disabled = false; form.reset(); }, 3500);
     });
   }
+
+  // Pre-fill "Anliegen" field from ?betreff= query param (links from job postings, Bedarfsanalyse etc.)
+  const anliegen = document.querySelector('#anliegen');
+  if (anliegen) {
+    const params = new URLSearchParams(window.location.search);
+    const betreff = params.get('betreff');
+    if (betreff) {
+      anliegen.value = decodeURIComponent(betreff).replace(/\+/g, ' ') + ': ';
+      anliegen.focus();
+      anliegen.setSelectionRange(anliegen.value.length, anliegen.value.length);
+    }
+  }
+
+  // Bedarfsanalyse form (demo — no backend wired up)
+  const bedarfsForm = document.querySelector('#bedarfsanalyse-form');
+  if (bedarfsForm) {
+    bedarfsForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = bedarfsForm.querySelector('button[type="submit"]');
+      const original = btn.textContent;
+      btn.textContent = 'Vielen Dank! Ich melde mich zeitnah.';
+      btn.disabled = true;
+      setTimeout(() => { btn.textContent = original; btn.disabled = false; bedarfsForm.reset(); }, 3500);
+    });
+  }
 });
