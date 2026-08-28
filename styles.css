@@ -214,12 +214,14 @@ section { position: relative; }
 .hero-dark-photo {
   position: relative;
   min-height: 360px;
+  /* Abstand zum sticky Header, damit das Gesicht nicht vom halbtransparenten Header überdeckt/abgeschnitten wird */
+  margin-top: var(--space-lg);
 }
 .hero-dark-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 12%;
 }
 .hero-dark-photo::after {
   content: "";
