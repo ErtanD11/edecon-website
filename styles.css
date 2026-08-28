@@ -262,7 +262,7 @@ section { position: relative; }
   gap: 0.5rem;
   color: var(--off-white);
 }
-.trust-item .stat { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--copper-400); }
+.trust-item .stat { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--copper-400); white-space: nowrap; }
 .trust-item .desc { font-size: 0.85rem; color: rgba(250,247,242,0.75); }
 
 /* ---------- Section spacing ---------- */
@@ -650,7 +650,7 @@ section { position: relative; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-  .hero-grid, .contact-grid, .layout-2col { grid-template-columns: 1fr; }
+  .hero-grid, .hero-dark-grid, .contact-grid, .layout-2col, .service-grid { grid-template-columns: 1fr; }
   .card-grid, .pillar-grid, .steps { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
@@ -658,12 +658,49 @@ section { position: relative; }
   .nav-toggle { display: block; }
   .cta-band { flex-direction: column; text-align: center; }
   .form-row { grid-template-columns: 1fr; }
+
+  /* Hero: Foto und Text gestapelt statt gequetscht nebeneinander */
+  .hero-dark-grid { min-height: 0; }
+  .hero-dark-copy { padding: var(--space-xl) var(--space-md) var(--space-lg); order: 2; }
+  .hero-dark-photo { min-height: 0; height: 62vh; max-height: 420px; order: 1; }
+  .hero-dark-photo::after { background: linear-gradient(180deg, transparent 55%, var(--navy-900) 100%); }
+  .hero-dark-badge { position: absolute; bottom: var(--space-md); left: var(--space-md); right: var(--space-md); max-width: none; }
+
+  /* Sidebar (z.B. Über-mich) unter statt neben dem Content, nicht mehr "sticky" */
+  .sidebar-card { position: static; }
+
+  /* Zweispaltige Cards/Pillar-Karten: Zahl-Overlay nicht zu groß auf schmalem Screen */
+  .pillar-card .pillar-num { font-size: 2.6rem; }
 }
 
 @media (max-width: 640px) {
   .footer-grid { grid-template-columns: 1fr; }
   .hero { padding: var(--space-2xl) 0 var(--space-xl); }
   .portrait-badge { left: 0.8rem; bottom: -1rem; padding: 0.8rem 1rem; }
+
+  /* Typografie & Abstände für kleine Screens verdichten */
+  .section { padding: var(--space-xl) 0; }
+  .h1 { font-size: clamp(1.9rem, 7vw, 2.6rem); }
+  .cta-band { padding: var(--space-lg) var(--space-md); }
+  .job-card, .contact-info-card, .sidebar-card { padding: var(--space-md); }
+
+  /* Trust-/KPI-Leiste: klarer zweispaltig statt gequetscht */
+  .trust-bar .container { justify-content: flex-start; gap: var(--space-md) var(--space-xl); }
+
+  /* Touch-Ziele: Buttons und Nav-Links auf ausreichende Tapgröße bringen */
+  .btn { padding: 0.9rem 1.5rem; }
+  .mobile-nav a { padding: 0.9rem 0; }
+
+  /* Lange Button-Texte ("Kostenloses Erstgespräch buchen") nicht abschneiden/überlaufen lassen */
+  .hero-actions, .cta-band-actions, .job-card-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn, .cta-band-actions .btn, .job-card-actions .btn {
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Formulare: Inputs nicht zu klein für Touch, keine Zoom-Auslösung auf iOS (min. 16px) */
+  .form-group input, .form-group textarea { font-size: 1rem; padding: 0.9rem 1rem; }
 }
 
 /* ---------- Mobile nav ---------- */
