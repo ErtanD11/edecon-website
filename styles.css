@@ -725,3 +725,25 @@ section { position: relative; }
   border-bottom: 1px solid rgba(250,247,242,0.1);
 }
 .mobile-nav .btn { margin-top: var(--space-lg); align-self: flex-start; }
+
+/* ---------- Scroll-Reveal (Inhalte fliegen beim Scrollen sanft ein) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+/* Gestaffelte Verzögerung für Kind-Elemente einer Gruppe (z.B. Card-Grid), per JS gesetzt */
+.reveal[style*="--rv-delay"] { transition-delay: var(--rv-delay, 0s); }
+
+/* Wer Reduced-Motion eingestellt hat, bekommt keine Bewegung — Inhalte sind sofort da */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
