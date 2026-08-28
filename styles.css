@@ -502,6 +502,12 @@ section { position: relative; }
   color: var(--copper-400);
   stroke-width: 1.6;
 }
+/* Titel im Kopfband: weiß, ohne Außenabstand, neben dem Icon */
+.service-block-image h3 {
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--off-white);
+}
 .service-block h3 { font-size: 1.35rem; margin-bottom: var(--space-sm); }
 .service-block p { color: var(--ink-soft); font-size: 0.98rem; margin-bottom: var(--space-sm); }
 .service-block-cta {
