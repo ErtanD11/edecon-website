@@ -2,7 +2,7 @@
 edeCON — Design System
 Farbschema: Klassisch-seriös (Navy / Kupfer / Off-White)
 ========================================================================== */
-
+ 
 :root {
 /* Farben */
 --navy-900: #0f1f38;
@@ -20,11 +20,11 @@ Farbschema: Klassisch-seriös (Navy / Kupfer / Off-White)
 --ink-soft: #4a5568;
 --ink-faint: #7c8797;
 --border-soft: #e4ddd1;
-
+ 
 /* Typografie */
 --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
 --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-
+ 
 /* Abstände */
 --space-xs: 0.5rem;
 --space-sm: 1rem;
@@ -33,7 +33,7 @@ Farbschema: Klassisch-seriös (Navy / Kupfer / Off-White)
 --space-xl: 4rem;
 --space-2xl: 6rem;
 --space-3xl: 8rem;
-
+ 
 /* Sonstiges */
 --radius: 4px;
 --radius-lg: 8px;
@@ -43,7 +43,7 @@ Farbschema: Klassisch-seriös (Navy / Kupfer / Off-White)
 --shadow-lg: 0 20px 60px rgba(15, 31, 56, 0.16);
 --transition: 0.25s ease;
 }
-
+ 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -61,15 +61,15 @@ ul { list-style: none; margin: 0; padding: 0; }
 h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15; margin: 0; color: var(--navy-900); }
 p { margin: 0; }
 button { font-family: inherit; cursor: pointer; }
-
+ 
 .container {
 max-width: var(--max-width);
 margin: 0 auto;
 padding: 0 1.5rem;
 }
-
+ 
 section { position: relative; }
-
+ 
 /* ---------- Eyebrow / Kicker ---------- */
 .eyebrow {
 display: inline-flex;
@@ -82,20 +82,22 @@ text-transform: uppercase;
 color: var(--copper-600);
 margin-bottom: var(--space-sm);
 }
+/* Ausnahme: Markenname "edeCON" als Eyebrow soll nicht großgeschrieben werden */
+.eyebrow.brand-case { text-transform: none; }
 .eyebrow::before {
 content: "";
 width: 22px;
 height: 1px;
 background: var(--copper-500);
 }
-
+ 
 /* ---------- Typografie-Hilfsklassen ---------- */
 .h1 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); letter-spacing: -0.01em; }
 .h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); letter-spacing: -0.01em; }
 .h3 { font-size: 1.3rem; }
 .lede { font-size: 1.15rem; color: var(--ink-soft); line-height: 1.65; }
 .italic-accent { font-style: italic; color: var(--copper-600); font-weight: 500; }
-
+ 
 /* ---------- Buttons ---------- */
 .btn {
 display: inline-flex;
@@ -128,7 +130,7 @@ border-color: rgba(250, 247, 242, 0.4);
 }
 .btn-ghost-light:hover { background: rgba(250, 247, 242, 0.12); border-color: var(--off-white); }
 .btn-lg { padding: 1rem 2.1rem; font-size: 1rem; }
-
+ 
 /* ---------- Header / Navigation ---------- */
 .site-header {
 position: sticky;
@@ -184,7 +186,7 @@ border: none;
 padding: 0.4rem;
 }
 .nav-toggle svg { width: 24px; height: 24px; color: var(--navy-900); }
-
+ 
 /* ---------- Hero (dunkles Navy, Vollbild-Foto — angelehnt an Wix-Studio-Entwurf) ---------- */
 .hero-dark {
 background: var(--navy-900);
@@ -226,7 +228,7 @@ inset: 0;
 background: linear-gradient(90deg, var(--navy-900) 0%, transparent 12%);
 }
 .hero-actions { display: flex; gap: var(--space-md); align-items: center; flex-wrap: wrap; }
-
+ 
 /* Bild-Badge (z.B. "25+ Jahre") überlagert auf dem Hero-Foto */
 .hero-dark-badge {
 position: absolute;
@@ -241,7 +243,7 @@ max-width: 220px;
 }
 .hero-dark-badge .num { font-family: var(--font-serif); font-size: 1.5rem; color: var(--navy-900); font-weight: 700; }
 .hero-dark-badge .label { font-size: 0.76rem; color: var(--ink-faint); }
-
+ 
 /* ---------- Trust bar ---------- */
 .trust-bar {
 background: var(--navy-900);
@@ -263,7 +265,7 @@ flex-wrap: wrap;
 }
 .trust-item .stat { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--copper-400); white-space: nowrap; }
 .trust-item .desc { font-size: 0.85rem; color: rgba(250,247,242,0.75); }
-
+ 
 /* ---------- Section spacing ---------- */
 .section { padding: var(--space-2xl) 0; }
 .section-alt { background: var(--paper); }
@@ -271,7 +273,7 @@ flex-wrap: wrap;
 .section-navy h2, .section-navy h3 { color: var(--off-white); }
 .section-header { max-width: 640px; margin-bottom: var(--space-xl); }
 .section-header.center { margin-left: auto; margin-right: auto; text-align: center; }
-
+ 
 /* ---------- Cards / Leistungen ---------- */
 .card-grid {
 display: grid;
@@ -310,7 +312,7 @@ gap: 0.3rem;
 }
 .service-card .card-link svg { width: 14px; height: 14px; transition: transform var(--transition); }
 .service-card .card-link:hover svg { transform: translateX(3px); }
-
+ 
 /* Card-Variante für Navy-Hintergrund */
 .section-navy .service-card {
 background: var(--navy-800);
@@ -322,7 +324,7 @@ border-color: rgba(250,247,242,0.12);
 .section-navy .service-card p:last-child { color: rgba(250,247,242,0.55) !important; }
 .section-navy .service-card .card-link { color: var(--copper-400); }
 .section-navy .service-icon { background: rgba(250,247,242,0.08); }
-
+ 
 /* Prose/Sidebar-Varianten für Navy-Hintergrund */
 .section-navy .prose p { color: rgba(250,247,242,0.78); }
 .section-navy .prose strong { color: var(--off-white); }
@@ -334,7 +336,7 @@ border-color: rgba(250,247,242,0.12);
 .section-navy .service-block p { color: rgba(250,247,242,0.75); }
 .section-navy .step-card h4 { color: var(--off-white); }
 .section-navy .step-card p { color: rgba(250,247,242,0.72); }
-
+ 
 /* ---------- Zwei-Spalten Pillar (Personalberatung/Unternehmensberatung) ---------- */
 .pillar-grid {
 display: grid;
@@ -365,7 +367,7 @@ opacity: 0.25;
 .pillar-card h3 { color: var(--off-white); font-size: 1.6rem; margin-bottom: 0.6rem; }
 .pillar-card p { color: rgba(250,247,242,0.85); margin-bottom: var(--space-md); }
 .pillar-card .btn { align-self: flex-start; }
-
+ 
 /* ---------- Testimonial / Quote ---------- */
 .quote-block {
 border-left: 3px solid var(--copper-500);
@@ -374,7 +376,7 @@ margin: var(--space-xl) 0;
 }
 .quote-block p { font-family: var(--font-serif); font-size: 1.4rem; font-style: italic; color: var(--navy-900); line-height: 1.5; }
 .quote-block .attr { margin-top: var(--space-sm); font-size: 0.9rem; color: var(--ink-faint); font-style: normal; }
-
+ 
 /* ---------- Prozess / Steps ---------- */
 .steps {
 display: grid;
@@ -401,7 +403,7 @@ margin-bottom: var(--space-sm);
 }
 .step-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; }
 .step-card p { color: var(--ink-soft); font-size: 0.94rem; }
-
+ 
 /* ---------- CTA-Band ---------- */
 .cta-band {
 background: var(--navy-900);
@@ -418,7 +420,7 @@ background-image: radial-gradient(circle at 85% 20%, rgba(198,131,76,0.25), tran
 .cta-band h2 { color: var(--off-white); margin-bottom: 0.5rem; }
 .cta-band p { color: rgba(250,247,242,0.8); }
 .cta-band-actions { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
-
+ 
 /* ---------- Footer ---------- */
 .site-footer {
 background: var(--navy-900);
@@ -450,7 +452,7 @@ flex-wrap: wrap;
 gap: var(--space-sm);
 }
 .footer-bottom a:hover { color: var(--copper-400); }
-
+ 
 /* ---------- Breadcrumb / Page Hero (Unterseiten) ---------- */
 .page-hero {
 padding: var(--space-2xl) 0 var(--space-xl);
@@ -461,13 +463,13 @@ color: var(--off-white);
 .page-hero .lede { color: rgba(250,247,242,0.82); max-width: 60ch; }
 .breadcrumb { display: flex; gap: 0.5rem; font-size: 0.85rem; color: rgba(250,247,242,0.55); margin-bottom: var(--space-md); }
 .breadcrumb a:hover { color: var(--copper-400); }
-
+ 
 /* ---------- Content prose (Über mich, Detailseiten) ---------- */
 .prose { max-width: 72ch; }
 .prose p { margin-bottom: var(--space-md); color: var(--ink-soft); font-size: 1.05rem; }
 .prose h3 { margin-top: var(--space-xl); margin-bottom: var(--space-sm); font-size: 1.25rem; }
 .prose strong { color: var(--navy-900); }
-
+ 
 /* ---------- Leistungsfeld: Bild oben, Text unten, CTA-Link (angelehnt an Wix-Studio-Entwurf) ---------- */
 .service-grid {
 display: grid;
@@ -533,7 +535,7 @@ display: block;
 margin-top: 0.15rem;
 }
 .service-block-cta:hover .cta-main { color: var(--copper-500); }
-
+ 
 /* ---------- Two column layout (content + sidebar) ---------- */
 .layout-2col {
 display: grid;
@@ -557,7 +559,7 @@ font-size: 0.92rem;
 color: var(--ink-soft);
 }
 .sidebar-card ul li:last-child { border-bottom: none; }
-
+ 
 /* ---------- Contact form ---------- */
 .contact-grid {
 display: grid;
@@ -601,7 +603,7 @@ padding: var(--space-xl);
 .contact-info-item svg { width: 20px; height: 20px; color: var(--copper-400); flex-shrink: 0; margin-top: 2px; }
 .contact-info-item .label { font-size: 0.78rem; color: rgba(250,247,242,0.55); text-transform: uppercase; letter-spacing: 0.05em; }
 .contact-info-item .value { font-size: 0.98rem; color: var(--off-white); }
-
+ 
 /* ---------- Utility ---------- */
 .mt-lg { margin-top: var(--space-lg); }
 .mb-lg { margin-bottom: var(--space-lg); }
@@ -616,7 +618,7 @@ padding: 0.35rem 0.9rem;
 border-radius: 999px;
 margin-bottom: var(--space-sm);
 }
-
+ 
 /* ---------- Stellenanzeigen (Jobs) ---------- */
 .job-list { display: flex; flex-direction: column; gap: var(--space-lg); }
 .job-card {
@@ -659,7 +661,7 @@ font-size: 0.92rem;
 color: var(--ink-soft);
 }
 .job-template-note strong { color: var(--navy-800); }
-
+ 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
 .hero-grid, .hero-dark-grid, .contact-grid, .layout-2col, .service-grid { grid-template-columns: 1fr; }
@@ -670,7 +672,7 @@ color: var(--ink-soft);
 .nav-toggle { display: block; }
 .cta-band { flex-direction: column; text-align: center; }
 .form-row { grid-template-columns: 1fr; }
-
+ 
 /* Hero: Text zuerst, Foto danach (mobil) */
 .hero-dark-grid { min-height: 0; }
 .hero-dark-copy { padding: var(--space-xl) var(--space-md) var(--space-lg); order: 1; }
@@ -686,35 +688,35 @@ padding: 0.7rem 0.9rem;
 }
 .hero-dark-badge .num { font-size: 1.15rem; }
 .hero-dark-badge .label { font-size: 0.68rem; line-height: 1.3; }
-
+ 
 /* Sidebar (z.B. Über-mich) unter statt neben dem Content, nicht mehr "sticky" */
 .sidebar-card { position: static; }
-
+ 
 /* Zweispaltige Cards/Pillar-Karten: Zahl-Overlay nicht zu groß auf schmalem Screen */
 .pillar-card .pillar-num { font-size: 2.6rem; }
-
+ 
 /* Trust-/KPI-Leiste: jedes Item auf volle Breite, Text bricht sauber statt abgeschnitten zu werden */
 .trust-item { flex: 1 1 100%; }
 }
-
+ 
 @media (max-width: 640px) {
 .footer-grid { grid-template-columns: 1fr; }
 .hero { padding: var(--space-2xl) 0 var(--space-xl); }
 .portrait-badge { left: 0.8rem; bottom: -1rem; padding: 0.8rem 1rem; }
-
+ 
 /* Typografie & Abstände für kleine Screens verdichten */
 .section { padding: var(--space-xl) 0; }
 .h1 { font-size: clamp(1.9rem, 7vw, 2.6rem); }
 .cta-band { padding: var(--space-lg) var(--space-md); }
 .job-card, .contact-info-card, .sidebar-card { padding: var(--space-md); }
-
+ 
 /* Trust-/KPI-Leiste: klarer zweispaltig statt gequetscht */
 .trust-bar .container { justify-content: flex-start; gap: var(--space-md) var(--space-xl); }
-
+ 
 /* Touch-Ziele: Buttons und Nav-Links auf ausreichende Tapgröße bringen */
 .btn { padding: 0.9rem 1.5rem; }
 .mobile-nav a { padding: 0.9rem 0; }
-
+ 
 /* Lange Button-Texte ("Kostenloses Erstgespräch buchen") nicht abschneiden/überlaufen lassen */
 .hero-actions, .cta-band-actions, .job-card-actions { flex-direction: column; align-items: stretch; }
 .hero-actions .btn, .cta-band-actions .btn, .job-card-actions .btn {
@@ -722,11 +724,11 @@ white-space: normal;
 text-align: center;
 justify-content: center;
 }
-
+ 
 /* Formulare: Inputs nicht zu klein für Touch, keine Zoom-Auslösung auf iOS (min. 16px) */
 .form-group input, .form-group textarea { font-size: 1rem; padding: 0.9rem 1rem; }
 }
-
+ 
 /* ---------- Mobile nav ---------- */
 .mobile-nav {
 display: none;
@@ -749,7 +751,7 @@ padding: var(--space-sm) 0;
 border-bottom: 1px solid rgba(250,247,242,0.1);
 }
 .mobile-nav .btn { margin-top: var(--space-lg); align-self: flex-start; }
-
+ 
 /* ---------- Scroll-Reveal (Inhalte fliegen beim Scrollen sanft ein) ---------- */
 .reveal {
 opacity: 0;
@@ -762,7 +764,7 @@ transform: none;
 }
 /* Gestaffelte Verzögerung für Kind-Elemente einer Gruppe (z.B. Card-Grid), per JS gesetzt */
 .reveal[style*="--rv-delay"] { transition-delay: var(--rv-delay, 0s); }
-
+ 
 /* Wer Reduced-Motion eingestellt hat, bekommt keine Bewegung — Inhalte sind sofort da */
 @media (prefers-reduced-motion: reduce) {
 .reveal, .reveal.in {
@@ -771,3 +773,4 @@ transform: none;
 transition: none;
 }
 }
+ 
