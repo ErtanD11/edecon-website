@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
       '.cta-band', '.quote-block', '.contact-info-card', '.sidebar-card',
       '.page-hero .breadcrumb, .page-hero h1, .page-hero .lede'
     ];
- 
+
     const targeted = new Set();
- 
+
     // Gruppen: Kind-Elemente bekommen eine gestaffelte Verzögerung
     groupSelectors.forEach(sel => {
       document.querySelectorAll(sel).forEach((el, i) => {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         targeted.add(el);
       });
     });
- 
+
     // Einzelblöcke ohne Staffelung
     singleSelectors.forEach(sel => {
       document.querySelectorAll(sel).forEach(el => {
@@ -33,12 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
         targeted.add(el);
       });
     });
- 
+
     if (!targeted.size) return;
- 
+
     // Reduced-Motion: nichts beobachten, Inhalte bleiben normal sichtbar (CSS deckt das zusätzlich ab)
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
- 
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -47,14 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
- 
+
     targeted.forEach(el => observer.observe(el));
   })();
- 
+
   const toggle = document.querySelector('.nav-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
   const closeBtn = document.querySelector('.mobile-nav-close');
- 
+
   if (toggle && mobileNav) {
     toggle.addEventListener('click', () => mobileNav.classList.add('open'));
   }
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
   mobileNav?.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => mobileNav.classList.remove('open'));
   });
- 
+
   // Header shadow on scroll
   const header = document.querySelector('.site-header');
   if (header) {
@@ -76,20 +76,44 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
- 
-  // Contact form (demo — no backend wired up)
-  const form = document.querySelector('#contact-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
+
+  // Gemeinsame Submit-Logik: sendet das Formular per fetch() an Formspree (action-Attribut),
+  // zeigt bei Erfolg die bestehende Bestätigung, bei Fehler eine Fallback-Meldung mit Mail-Hinweis.
+  function wireFormSubmit(form) {
+    if (!form) return;
+    const btn = form.querySelector('button[type="submit"]');
+    const original = btn.textContent;
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      const original = btn.textContent;
-      btn.textContent = 'Vielen Dank! Ich melde mich zeitnah.';
       btn.disabled = true;
-      setTimeout(() => { btn.textContent = original; btn.disabled = false; form.reset(); }, 3500);
+      btn.textContent = 'Wird gesendet …';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          btn.textContent = 'Vielen Dank! Ich melde mich zeitnah.';
+          form.reset();
+        } else {
+          throw new Error('Formspree-Fehler');
+        }
+      } catch (err) {
+        btn.textContent = 'Senden fehlgeschlagen — bitte per Mail an info@edecon.de';
+      }
+
+      setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 4500);
     });
   }
- 
+
+  // Contact form
+  const form = document.querySelector('#contact-form');
+  wireFormSubmit(form);
+
   // Pre-fill "Anliegen" field from ?betreff= query param (links from job postings, Bedarfsanalyse etc.)
   const anliegen = document.querySelector('#anliegen');
   if (anliegen) {
@@ -101,17 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
       anliegen.setSelectionRange(anliegen.value.length, anliegen.value.length);
     }
   }
- 
-  // Bedarfsanalyse form (demo — no backend wired up)
+
+  // Bedarfsanalyse form
   const bedarfsForm = document.querySelector('#bedarfsanalyse-form');
-  if (bedarfsForm) {
-    bedarfsForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = bedarfsForm.querySelector('button[type="submit"]');
-      const original = btn.textContent;
-      btn.textContent = 'Vielen Dank! Ich melde mich zeitnah.';
-      btn.disabled = true;
-      setTimeout(() => { btn.textContent = original; btn.disabled = false; bedarfsForm.reset(); }, 3500);
-    });
-  }
+  wireFormSubmit(bedarfsForm);
 });
