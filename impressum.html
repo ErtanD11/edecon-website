@@ -1,155 +1,773 @@
+/* ==========================================================================
+edeCON — Design System
+Farbschema: Klassisch-seriös (Navy / Kupfer / Off-White)
+========================================================================== */
 
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<style>
-.prose ul.legal-list { margin: 0 0 var(--space-md) 1.1rem; list-style: disc; }
-.prose ul.legal-list li { color: var(--ink-soft); margin-bottom: 0.35rem; }
-.prose .legal-block { margin-bottom: var(--space-xl); }
-.prose .legal-block:last-child { margin-bottom: 0; }
-</style>
-<title>Impressum | edeCON — Ertan Demirel</title>
-<meta name="description" content="Impressum von edeCON — Ertan Demirel Consulting gemäß § 5 TMG, § 55 Abs. 2 RStV.">
-<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-</head>
-<body>
+:root {
+/* Farben */
+--navy-900: #0f1f38;
+--navy-800: #16294a;
+--navy-700: #1e355c;
+--navy-600: #2a4676;
+--navy-500: #3a5a94;
+--copper-600: #b5703c;
+--copper-500: #c8834c;
+--copper-400: #d69a68;
+--off-white: #faf7f2;
+--off-white-2: #f2ede4;
+--paper: #ffffff;
+--ink: #1c2430;
+--ink-soft: #4a5568;
+--ink-faint: #7c8797;
+--border-soft: #e4ddd1;
 
-<header class="site-header">
-<div class="container header-inner">
-<a href="index.html" class="logo"><img src="assets/logo-dark.png" alt="edeCON — People &amp; Organizations"></a>
-<nav class="nav-main">
-<ul class="nav-links">
-<li><a href="index.html">Start</a></li>
-<li><a href="unternehmensberatung.html">Unternehmensberatung</a></li>
-<li><a href="personalberatung.html">Personalberatung</a></li>
-<li><a href="ueber-mich.html">Über mich</a></li>
-<li><a href="kontakt.html">Kontakt</a></li>
-</ul>
-<div class="nav-cta">
-<a href="https://calendar.app.google/LDrjPb1nM4MtHYtv8" target="_blank" rel="noopener" class="btn btn-primary">Erstgespräch buchen</a>
-<button class="nav-toggle" aria-label="Menü öffnen">
-<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-</button>
-</div>
-</nav>
-</div>
-</header>
+/* Typografie */
+--font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+--font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-<div class="mobile-nav">
-<div class="mobile-nav-header">
-<span class="logo"><img src="assets/logo-white.png" alt="edeCON"></span>
-<button class="mobile-nav-close" aria-label="Menü schließen">
-<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-</button>
-</div>
-<a href="index.html">Start</a>
-<a href="unternehmensberatung.html">Unternehmensberatung</a>
-<a href="personalberatung.html">Personalberatung</a>
-<a href="ueber-mich.html">Über mich</a>
-<a href="kontakt.html">Kontakt</a>
-<a href="https://calendar.app.google/LDrjPb1nM4MtHYtv8" target="_blank" rel="noopener" class="btn btn-primary">Erstgespräch buchen</a>
-</div>
+/* Abstände */
+--space-xs: 0.5rem;
+--space-sm: 1rem;
+--space-md: 1.5rem;
+--space-lg: 2.5rem;
+--space-xl: 4rem;
+--space-2xl: 6rem;
+--space-3xl: 8rem;
 
-<main>
-<section class="page-hero">
-<div class="container">
-<div class="breadcrumb"><a href="index.html">Start</a> / <span>Impressum</span></div>
-<div class="eyebrow" style="color:#d69a68;">Rechtliches</div>
-<h1 class="h1">Impressum</h1>
-</div>
-</section>
+/* Sonstiges */
+--radius: 4px;
+--radius-lg: 8px;
+--max-width: 1180px;
+--shadow-sm: 0 1px 3px rgba(15, 31, 56, 0.08);
+--shadow-md: 0 8px 30px rgba(15, 31, 56, 0.10);
+--shadow-lg: 0 20px 60px rgba(15, 31, 56, 0.16);
+--transition: 0.25s ease;
+}
 
-<section class="section section-alt">
-<div class="container">
-<div class="prose">
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+margin: 0;
+font-family: var(--font-sans);
+color: var(--ink);
+background: var(--off-white);
+-webkit-font-smoothing: antialiased;
+line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15; margin: 0; color: var(--navy-900); }
+p { margin: 0; }
+button { font-family: inherit; cursor: pointer; }
 
-<div class="legal-block">
-<p><strong>Angaben gem. § 5 TMG, § 55 Abs. 2 RStV</strong></p>
-<p>edeCON – Ertan Demirel Consulting</p>
-<p>Ertan Demirel<br>
-Niedererdstrasse 73<br>
-67071 Ludwigshafen</p>
-</div>
+.container {
+max-width: var(--max-width);
+margin: 0 auto;
+padding: 0 1.5rem;
+}
 
-<div class="legal-block">
-<h3>Umsatzsteuer-Identifikationsnummer (USt-IdNr.)</h3>
-<p>DE366551278</p>
-</div>
+section { position: relative; }
 
-<div class="legal-block">
-<h3>Kontakt</h3>
-<p>
-Telefon: <a href="tel:+4962159285665">+49 621 59 28 56 65</a><br>
-Telefax: +49 621 65058304<br>
-Mobil: <a href="tel:+491622910001">+49 162 291 000 1</a><br>
-E-Mail: <a href="mailto:ertan.demirel@edecon.de">ertan.demirel@edecon.de</a>
-</p>
-</div>
+/* ---------- Eyebrow / Kicker ---------- */
+.eyebrow {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+font-size: 0.78rem;
+font-weight: 600;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: var(--copper-600);
+margin-bottom: var(--space-sm);
+}
+.eyebrow::before {
+content: "";
+width: 22px;
+height: 1px;
+background: var(--copper-500);
+}
 
-<div class="legal-block">
-<h3>Disclaimer</h3>
-<p>Die bereitgestellten Informationen auf dieser Website wurden sorgfältig geprüft und werden regelmäßig aktualisiert. Jedoch kann keine Garantie dafür übernommen werden, dass alle Angaben zu jeder Zeit vollständig, richtig und in letzter Aktualität dargestellt sind. Alle Angaben können ohne vorherige Ankündigung geändert, entfernt oder ergänzt werden.</p>
-</div>
+/* ---------- Typografie-Hilfsklassen ---------- */
+.h1 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); letter-spacing: -0.01em; }
+.h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); letter-spacing: -0.01em; }
+.h3 { font-size: 1.3rem; }
+.lede { font-size: 1.15rem; color: var(--ink-soft); line-height: 1.65; }
+.italic-accent { font-style: italic; color: var(--copper-600); font-weight: 500; }
 
-<div class="legal-block">
-<h3>Online-Streitbeilegung</h3>
-<p>Online-Streitbeilegung gemäß Art. 14 Abs. 1 ODR-VO und § 36 VSBG: Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS-Plattform) bereit. Erreichbar ist diese unter <a href="http://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">http://ec.europa.eu/consumers/odr/</a>. Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und grundsätzlich nicht bereit.</p>
-</div>
+/* ---------- Buttons ---------- */
+.btn {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+padding: 0.85rem 1.7rem;
+border-radius: var(--radius);
+font-size: 0.95rem;
+font-weight: 600;
+border: 1px solid transparent;
+transition: all var(--transition);
+white-space: nowrap;
+}
+.btn-primary {
+background: var(--copper-600);
+color: var(--off-white);
+box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover { background: var(--copper-500); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.btn-secondary {
+background: transparent;
+color: var(--navy-900);
+border-color: var(--navy-900);
+}
+.btn-secondary:hover { background: var(--navy-900); color: var(--off-white); }
+.btn-ghost-light {
+background: transparent;
+color: var(--off-white);
+border-color: rgba(250, 247, 242, 0.4);
+}
+.btn-ghost-light:hover { background: rgba(250, 247, 242, 0.12); border-color: var(--off-white); }
+.btn-lg { padding: 1rem 2.1rem; font-size: 1rem; }
 
-</div>
-</div>
-</section>
-</main>
+/* ---------- Header / Navigation ---------- */
+.site-header {
+position: sticky;
+top: 0;
+z-index: 100;
+background: rgba(250, 247, 242, 0.92);
+backdrop-filter: blur(10px);
+border-bottom: 1px solid var(--border-soft);
+}
+.header-inner {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 1.1rem 0;
+}
+.logo {
+display: inline-flex;
+align-items: center;
+}
+.logo img {
+height: 38px;
+width: auto;
+display: block;
+}
+.footer-brand .logo img,
+.mobile-nav-header .logo img {
+height: 34px;
+}
+.nav-main {
+display: flex;
+align-items: center;
+gap: var(--space-lg);
+}
+.nav-links {
+display: flex;
+gap: var(--space-md);
+align-items: center;
+}
+.nav-links a {
+font-size: 0.92rem;
+font-weight: 500;
+color: var(--ink-soft);
+padding: 0.4rem 0;
+border-bottom: 2px solid transparent;
+transition: color var(--transition), border-color var(--transition);
+}
+.nav-links a:hover, .nav-links a.active { color: var(--navy-900); border-bottom-color: var(--copper-500); }
+.nav-cta { display: flex; align-items: center; gap: var(--space-md); }
+.nav-toggle {
+display: none;
+background: none;
+border: none;
+padding: 0.4rem;
+}
+.nav-toggle svg { width: 24px; height: 24px; color: var(--navy-900); }
 
-<footer class="site-footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand">
-<a href="index.html" class="logo"><img src="assets/logo-white.png" alt="edeCON — People &amp; Organizations"></a>
-<p>Beratung mit Substanz statt Schlagworten — Unternehmensberatung und Personalberatung aus einer Hand.</p>
-</div>
-<div class="footer-col">
-<h4>Unternehmensberatung</h4>
-<ul>
-<li><a href="unternehmensberatung.html">Unternehmensberatung</a></li>
-<li><a href="personalberatung.html">Personalberatung</a></li>
-<li><a href="ueber-mich.html">Über mich</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Personalberatung</h4>
-<ul>
-<li><a href="personalberatung.html#kunden">Für Kunden</a></li>
-<li><a href="personalberatung.html#kandidaten">Für Kandidaten</a></li>
-<li><a href="stellenanzeigen.html">Stellenanzeigen</a></li>
-<li><a href="bedarfsanalyse.html">Bedarfsanalyse</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Kontakt</h4>
-<ul>
-<li><a href="mailto:info@edecon.de">info@edecon.de</a></li>
-<li><a href="tel:+491622910001">+49 162 291 000 1</a></li>
-<li><a href="kontakt.html">Niedererdstrasse 73, 67071 Ludwigshafen</a></li>
-<li><a href="https://www.linkedin.com/in/ertan-demirel/" target="_blank" rel="noopener">LinkedIn-Profil</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<span>© 2026 edeCON — Ertan Demirel. Alle Rechte vorbehalten.</span>
-<span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
-</div>
-</div>
-</footer>
+/* ---------- Hero (dunkles Navy, Vollbild-Foto — angelehnt an Wix-Studio-Entwurf) ---------- */
+.hero-dark {
+background: var(--navy-900);
+overflow: hidden;
+}
+.hero-dark-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+align-items: stretch;
+min-height: 560px;
+}
+.hero-dark-copy {
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: var(--space-2xl) var(--space-lg) var(--space-2xl) 0;
+}
+.hero-dark-copy .eyebrow { color: var(--copper-400); }
+.hero-dark-copy .eyebrow::before { background: var(--copper-400); }
+.hero-dark-copy .h1 { color: var(--off-white); margin-bottom: var(--space-md); }
+.hero-dark-copy .lede { color: rgba(250,247,242,0.78); margin-bottom: var(--space-lg); max-width: 48ch; }
+.hero-dark-note { font-size: 0.85rem; color: rgba(250,247,242,0.55); margin-top: var(--space-md); }
+.hero-dark-photo {
+position: relative;
+min-height: 360px;
+/* Abstand zum sticky Header, damit das Gesicht nicht vom halbtransparenten Header überdeckt/abgeschnitten wird */
+margin-top: var(--space-lg);
+}
+.hero-dark-photo img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center 12%;
+}
+.hero-dark-photo::after {
+content: "";
+position: absolute;
+inset: 0;
+background: linear-gradient(90deg, var(--navy-900) 0%, transparent 12%);
+}
+.hero-actions { display: flex; gap: var(--space-md); align-items: center; flex-wrap: wrap; }
 
-<script src="main.js"></script>
-</body>
-</html>
+/* Bild-Badge (z.B. "25+ Jahre") überlagert auf dem Hero-Foto */
+.hero-dark-badge {
+position: absolute;
+bottom: var(--space-lg);
+left: var(--space-lg);
+background: var(--paper);
+border-radius: var(--radius);
+box-shadow: var(--shadow-md);
+padding: 1rem 1.3rem;
+z-index: 2;
+max-width: 220px;
+}
+.hero-dark-badge .num { font-family: var(--font-serif); font-size: 1.5rem; color: var(--navy-900); font-weight: 700; }
+.hero-dark-badge .label { font-size: 0.76rem; color: var(--ink-faint); }
+
+/* ---------- Trust bar ---------- */
+.trust-bar {
+background: var(--navy-900);
+padding: var(--space-md) 0;
+}
+.trust-bar .container {
+display: flex;
+flex-wrap: wrap;
+gap: var(--space-lg);
+align-items: center;
+justify-content: space-between;
+}
+.trust-item {
+display: flex;
+align-items: baseline;
+gap: 0.5rem;
+color: var(--off-white);
+flex-wrap: wrap;
+}
+.trust-item .stat { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--copper-400); white-space: nowrap; }
+.trust-item .desc { font-size: 0.85rem; color: rgba(250,247,242,0.75); }
+
+/* ---------- Section spacing ---------- */
+.section { padding: var(--space-2xl) 0; }
+.section-alt { background: var(--paper); }
+.section-navy { background: var(--navy-900); color: var(--off-white); }
+.section-navy h2, .section-navy h3 { color: var(--off-white); }
+.section-header { max-width: 640px; margin-bottom: var(--space-xl); }
+.section-header.center { margin-left: auto; margin-right: auto; text-align: center; }
+
+/* ---------- Cards / Leistungen ---------- */
+.card-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: var(--space-md);
+}
+.service-card {
+background: var(--paper);
+border: 1px solid var(--border-soft);
+border-radius: var(--radius-lg);
+padding: var(--space-lg);
+transition: box-shadow var(--transition), transform var(--transition);
+}
+.service-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.service-icon {
+width: 46px;
+height: 46px;
+border-radius: var(--radius);
+background: var(--off-white-2);
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: var(--space-md);
+color: var(--copper-600);
+}
+.service-icon svg { width: 24px; height: 24px; }
+.service-card h3 { margin-bottom: 0.7rem; font-size: 1.2rem; }
+.service-card p { color: var(--ink-soft); font-size: 0.96rem; margin-bottom: var(--space-sm); }
+.service-card .card-link {
+font-size: 0.88rem;
+font-weight: 600;
+color: var(--navy-800);
+display: inline-flex;
+align-items: center;
+gap: 0.3rem;
+}
+.service-card .card-link svg { width: 14px; height: 14px; transition: transform var(--transition); }
+.service-card .card-link:hover svg { transform: translateX(3px); }
+
+/* Card-Variante für Navy-Hintergrund */
+.section-navy .service-card {
+background: var(--navy-800);
+border-color: rgba(250,247,242,0.12);
+}
+.section-navy .service-card h3 { color: var(--off-white); }
+.section-navy .service-card p { color: rgba(250,247,242,0.72); }
+.section-navy .service-card p[style*="ink-faint"],
+.section-navy .service-card p:last-child { color: rgba(250,247,242,0.55) !important; }
+.section-navy .service-card .card-link { color: var(--copper-400); }
+.section-navy .service-icon { background: rgba(250,247,242,0.08); }
+
+/* Prose/Sidebar-Varianten für Navy-Hintergrund */
+.section-navy .prose p { color: rgba(250,247,242,0.78); }
+.section-navy .prose strong { color: var(--off-white); }
+.section-navy .badge-pill { background: rgba(250,247,242,0.1); color: var(--off-white); }
+.section-navy .sidebar-card { background: var(--navy-800); border-color: rgba(250,247,242,0.12); }
+.section-navy .sidebar-card h4 { color: var(--off-white); }
+.section-navy .sidebar-card ul li { color: rgba(250,247,242,0.72); border-bottom-color: rgba(250,247,242,0.12); }
+.section-navy .service-block h3 { color: var(--off-white); }
+.section-navy .service-block p { color: rgba(250,247,242,0.75); }
+.section-navy .step-card h4 { color: var(--off-white); }
+.section-navy .step-card p { color: rgba(250,247,242,0.72); }
+
+/* ---------- Zwei-Spalten Pillar (Personalberatung/Unternehmensberatung) ---------- */
+.pillar-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: var(--space-md);
+}
+.pillar-card {
+position: relative;
+border-radius: var(--radius-lg);
+padding: var(--space-xl) var(--space-lg);
+overflow: hidden;
+min-height: 320px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+}
+.pillar-card.navy { background: linear-gradient(160deg, var(--navy-800), var(--navy-900)); color: var(--off-white); }
+.pillar-card.copper { background: linear-gradient(160deg, var(--copper-500), var(--copper-600)); color: var(--off-white); }
+.pillar-card .pillar-num {
+position: absolute;
+top: var(--space-lg);
+left: var(--space-lg);
+font-family: var(--font-serif);
+font-size: 3.5rem;
+font-weight: 700;
+opacity: 0.25;
+}
+.pillar-card h3 { color: var(--off-white); font-size: 1.6rem; margin-bottom: 0.6rem; }
+.pillar-card p { color: rgba(250,247,242,0.85); margin-bottom: var(--space-md); }
+.pillar-card .btn { align-self: flex-start; }
+
+/* ---------- Testimonial / Quote ---------- */
+.quote-block {
+border-left: 3px solid var(--copper-500);
+padding-left: var(--space-lg);
+margin: var(--space-xl) 0;
+}
+.quote-block p { font-family: var(--font-serif); font-size: 1.4rem; font-style: italic; color: var(--navy-900); line-height: 1.5; }
+.quote-block .attr { margin-top: var(--space-sm); font-size: 0.9rem; color: var(--ink-faint); font-style: normal; }
+
+/* ---------- Prozess / Steps ---------- */
+.steps {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: var(--space-md);
+counter-reset: step;
+}
+.step-card { position: relative; padding-top: var(--space-lg); }
+.step-card::before {
+counter-increment: step;
+content: counter(step);
+font-family: var(--font-serif);
+font-size: 1.1rem;
+font-weight: 700;
+color: var(--off-white);
+background: var(--copper-600);
+width: 40px;
+height: 40px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: var(--space-sm);
+}
+.step-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.step-card p { color: var(--ink-soft); font-size: 0.94rem; }
+
+/* ---------- CTA-Band ---------- */
+.cta-band {
+background: var(--navy-900);
+color: var(--off-white);
+border-radius: var(--radius-lg);
+padding: var(--space-xl) var(--space-2xl);
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: var(--space-lg);
+flex-wrap: wrap;
+background-image: radial-gradient(circle at 85% 20%, rgba(198,131,76,0.25), transparent 55%);
+}
+.cta-band h2 { color: var(--off-white); margin-bottom: 0.5rem; }
+.cta-band p { color: rgba(250,247,242,0.8); }
+.cta-band-actions { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+background: var(--navy-900);
+color: rgba(250,247,242,0.8);
+padding: var(--space-2xl) 0 var(--space-md);
+}
+.footer-grid {
+display: grid;
+grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr;
+gap: var(--space-xl);
+padding-bottom: var(--space-xl);
+border-bottom: 1px solid rgba(250,247,242,0.12);
+}
+.footer-brand .logo { color: var(--off-white); }
+.footer-brand .logo span { color: var(--copper-400); }
+.footer-brand p { margin-top: var(--space-sm); font-size: 0.9rem; color: rgba(250,247,242,0.65); max-width: 32ch; }
+.footer-col h4 { color: var(--off-white); font-family: var(--font-sans); font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: var(--space-sm); font-weight: 600; }
+.footer-col ul li { margin-bottom: 0.6rem; }
+.footer-col a { font-size: 0.9rem; color: rgba(250,247,242,0.75); transition: color var(--transition); }
+.footer-col a:hover { color: var(--copper-400); }
+.footer-bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-top: var(--space-md);
+font-size: 0.82rem;
+color: rgba(250,247,242,0.5);
+flex-wrap: wrap;
+gap: var(--space-sm);
+}
+.footer-bottom a:hover { color: var(--copper-400); }
+
+/* ---------- Breadcrumb / Page Hero (Unterseiten) ---------- */
+.page-hero {
+padding: var(--space-2xl) 0 var(--space-xl);
+background: linear-gradient(160deg, var(--navy-800), var(--navy-900));
+color: var(--off-white);
+}
+.page-hero h1 { color: var(--off-white); }
+.page-hero .lede { color: rgba(250,247,242,0.82); max-width: 60ch; }
+.breadcrumb { display: flex; gap: 0.5rem; font-size: 0.85rem; color: rgba(250,247,242,0.55); margin-bottom: var(--space-md); }
+.breadcrumb a:hover { color: var(--copper-400); }
+
+/* ---------- Content prose (Über mich, Detailseiten) ---------- */
+.prose { max-width: 72ch; }
+.prose p { margin-bottom: var(--space-md); color: var(--ink-soft); font-size: 1.05rem; }
+.prose h3 { margin-top: var(--space-xl); margin-bottom: var(--space-sm); font-size: 1.25rem; }
+.prose strong { color: var(--navy-900); }
+
+/* ---------- Leistungsfeld: Bild oben, Text unten, CTA-Link (angelehnt an Wix-Studio-Entwurf) ---------- */
+.service-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: var(--space-xl) var(--space-lg);
+}
+/* Flaches Kopfband: Icon + Titel nebeneinander statt großer Bildfläche */
+.service-block-image {
+border-radius: var(--radius);
+aspect-ratio: 16 / 7;
+margin-bottom: var(--space-md);
+display: flex;
+align-items: flex-end;
+gap: var(--space-sm);
+padding: 0 var(--space-lg) var(--space-lg);
+background: linear-gradient(160deg, var(--navy-800), var(--navy-900));
+}
+.service-block-icon-ring {
+flex-shrink: 0;
+width: 30px;
+height: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 18px;
+}
+.service-block-image svg {
+width: 100%;
+height: 100%;
+color: var(--copper-400);
+stroke-width: 1.6;
+}
+/* Titel im Kopfband: weiß, ohne Außenabstand, neben dem Icon, immer einzeilig */
+.service-block-image h3 {
+font-size: clamp(0.72rem, 2.6vw, 1.05rem);
+line-height: 1;
+margin: 0;
+color: var(--off-white);
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+flex: 1;
+min-width: 0;
+}
+.service-block h3 { font-size: 1.35rem; margin-bottom: var(--space-sm); }
+.service-block p { color: var(--ink-soft); font-size: 0.98rem; margin-bottom: var(--space-sm); }
+.service-block-cta {
+display: inline-block;
+margin-top: 0.4rem;
+}
+.service-block-cta .cta-main {
+font-size: 0.92rem;
+font-weight: 600;
+color: var(--copper-600);
+text-decoration: underline;
+text-underline-offset: 3px;
+display: block;
+}
+.service-block-cta .cta-sub {
+font-size: 0.78rem;
+color: var(--ink-faint);
+display: block;
+margin-top: 0.15rem;
+}
+.service-block-cta:hover .cta-main { color: var(--copper-500); }
+
+/* ---------- Two column layout (content + sidebar) ---------- */
+.layout-2col {
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: var(--space-2xl);
+align-items: start;
+}
+.sidebar-card {
+background: var(--paper);
+border: 1px solid var(--border-soft);
+border-radius: var(--radius-lg);
+padding: var(--space-lg);
+position: sticky;
+top: 100px;
+}
+.sidebar-card h4 { font-size: 1rem; margin-bottom: var(--space-sm); }
+.sidebar-card ul li {
+padding: 0.6rem 0;
+border-bottom: 1px solid var(--border-soft);
+font-size: 0.92rem;
+color: var(--ink-soft);
+}
+.sidebar-card ul li:last-child { border-bottom: none; }
+
+/* ---------- Contact form ---------- */
+.contact-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: var(--space-2xl);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
+.form-group { margin-bottom: var(--space-md); }
+.form-group.full { grid-column: 1 / -1; }
+.form-group label {
+display: block;
+font-size: 0.85rem;
+font-weight: 600;
+color: var(--navy-900);
+margin-bottom: 0.4rem;
+}
+.form-group input, .form-group textarea {
+width: 100%;
+padding: 0.8rem 1rem;
+border: 1px solid var(--border-soft);
+border-radius: var(--radius);
+font-family: inherit;
+font-size: 0.95rem;
+background: var(--paper);
+transition: border-color var(--transition);
+}
+.form-group input:focus, .form-group textarea:focus {
+outline: none;
+border-color: var(--copper-500);
+}
+.section-navy .form-group label { color: var(--off-white); }
+.contact-info-card {
+background: var(--navy-800);
+border: 1px solid rgba(250,247,242,0.12);
+color: var(--off-white);
+border-radius: var(--radius-lg);
+padding: var(--space-xl);
+}
+.contact-info-card h3 { color: var(--off-white); margin-bottom: var(--space-md); }
+.contact-info-item { display: flex; gap: var(--space-sm); margin-bottom: var(--space-md); align-items: flex-start; }
+.contact-info-item svg { width: 20px; height: 20px; color: var(--copper-400); flex-shrink: 0; margin-top: 2px; }
+.contact-info-item .label { font-size: 0.78rem; color: rgba(250,247,242,0.55); text-transform: uppercase; letter-spacing: 0.05em; }
+.contact-info-item .value { font-size: 0.98rem; color: var(--off-white); }
+
+/* ---------- Utility ---------- */
+.mt-lg { margin-top: var(--space-lg); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.text-center { text-align: center; }
+.badge-pill {
+display: inline-block;
+background: var(--off-white-2);
+color: var(--navy-800);
+font-size: 0.78rem;
+font-weight: 600;
+padding: 0.35rem 0.9rem;
+border-radius: 999px;
+margin-bottom: var(--space-sm);
+}
+
+/* ---------- Stellenanzeigen (Jobs) ---------- */
+.job-list { display: flex; flex-direction: column; gap: var(--space-lg); }
+.job-card {
+background: var(--paper);
+border: 1px solid var(--border-soft);
+border-radius: var(--radius-lg);
+padding: var(--space-xl);
+box-shadow: var(--shadow-sm);
+}
+.job-card-head {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: var(--space-md);
+flex-wrap: wrap;
+margin-bottom: var(--space-md);
+padding-bottom: var(--space-md);
+border-bottom: 1px solid var(--border-soft);
+}
+.job-card-head h3 { font-size: 1.35rem; margin-bottom: 0.4rem; }
+.job-meta { display: flex; gap: 0.6rem; flex-wrap: wrap; font-size: 0.82rem; color: var(--ink-faint); }
+.job-meta span { background: var(--off-white-2); padding: 0.3rem 0.7rem; border-radius: 999px; }
+.job-card-body h4 {
+font-size: 0.82rem;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+color: var(--copper-600);
+margin: var(--space-md) 0 0.5rem;
+}
+.job-card-body h4:first-child { margin-top: 0; }
+.job-card-body ul { margin: 0; padding-left: 1.1rem; }
+.job-card-body ul li { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 0.35rem; }
+.job-card-actions { margin-top: var(--space-lg); display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+.job-template-note {
+border: 1px dashed var(--copper-500);
+background: rgba(197, 131, 76, 0.06);
+border-radius: var(--radius-lg);
+padding: var(--space-lg);
+font-size: 0.92rem;
+color: var(--ink-soft);
+}
+.job-template-note strong { color: var(--navy-800); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+.hero-grid, .hero-dark-grid, .contact-grid, .layout-2col, .service-grid { grid-template-columns: 1fr; }
+.card-grid, .pillar-grid, .steps { grid-template-columns: 1fr; }
+.footer-grid { grid-template-columns: 1fr 1fr; }
+.nav-links { display: none; }
+.nav-cta .btn-primary { display: none; }
+.nav-toggle { display: block; }
+.cta-band { flex-direction: column; text-align: center; }
+.form-row { grid-template-columns: 1fr; }
+
+/* Hero: Text zuerst, Foto danach (mobil) */
+.hero-dark-grid { min-height: 0; }
+.hero-dark-copy { padding: var(--space-xl) var(--space-md) var(--space-lg); order: 1; }
+.hero-dark-photo { min-height: 0; height: 62vh; max-height: 420px; order: 2; margin-top: 0; }
+.hero-dark-photo::after { background: linear-gradient(0deg, transparent 55%, var(--navy-900) 100%); }
+.hero-dark-badge {
+position: absolute;
+bottom: var(--space-sm);
+left: var(--space-sm);
+right: auto;
+max-width: 168px;
+padding: 0.7rem 0.9rem;
+}
+.hero-dark-badge .num { font-size: 1.15rem; }
+.hero-dark-badge .label { font-size: 0.68rem; line-height: 1.3; }
+
+/* Sidebar (z.B. Über-mich) unter statt neben dem Content, nicht mehr "sticky" */
+.sidebar-card { position: static; }
+
+/* Zweispaltige Cards/Pillar-Karten: Zahl-Overlay nicht zu groß auf schmalem Screen */
+.pillar-card .pillar-num { font-size: 2.6rem; }
+
+/* Trust-/KPI-Leiste: jedes Item auf volle Breite, Text bricht sauber statt abgeschnitten zu werden */
+.trust-item { flex: 1 1 100%; }
+}
+
+@media (max-width: 640px) {
+.footer-grid { grid-template-columns: 1fr; }
+.hero { padding: var(--space-2xl) 0 var(--space-xl); }
+.portrait-badge { left: 0.8rem; bottom: -1rem; padding: 0.8rem 1rem; }
+
+/* Typografie & Abstände für kleine Screens verdichten */
+.section { padding: var(--space-xl) 0; }
+.h1 { font-size: clamp(1.9rem, 7vw, 2.6rem); }
+.cta-band { padding: var(--space-lg) var(--space-md); }
+.job-card, .contact-info-card, .sidebar-card { padding: var(--space-md); }
+
+/* Trust-/KPI-Leiste: klarer zweispaltig statt gequetscht */
+.trust-bar .container { justify-content: flex-start; gap: var(--space-md) var(--space-xl); }
+
+/* Touch-Ziele: Buttons und Nav-Links auf ausreichende Tapgröße bringen */
+.btn { padding: 0.9rem 1.5rem; }
+.mobile-nav a { padding: 0.9rem 0; }
+
+/* Lange Button-Texte ("Kostenloses Erstgespräch buchen") nicht abschneiden/überlaufen lassen */
+.hero-actions, .cta-band-actions, .job-card-actions { flex-direction: column; align-items: stretch; }
+.hero-actions .btn, .cta-band-actions .btn, .job-card-actions .btn {
+white-space: normal;
+text-align: center;
+justify-content: center;
+}
+
+/* Formulare: Inputs nicht zu klein für Touch, keine Zoom-Auslösung auf iOS (min. 16px) */
+.form-group input, .form-group textarea { font-size: 1rem; padding: 0.9rem 1rem; }
+}
+
+/* ---------- Mobile nav ---------- */
+.mobile-nav {
+display: none;
+position: fixed;
+inset: 0;
+background: var(--navy-900);
+z-index: 200;
+padding: var(--space-xl) var(--space-lg);
+flex-direction: column;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-xl); }
+.mobile-nav-close { background: none; border: none; color: var(--off-white); }
+.mobile-nav-close svg { width: 28px; height: 28px; }
+.mobile-nav a {
+font-family: var(--font-serif);
+font-size: 1.6rem;
+color: var(--off-white);
+padding: var(--space-sm) 0;
+border-bottom: 1px solid rgba(250,247,242,0.1);
+}
+.mobile-nav .btn { margin-top: var(--space-lg); align-self: flex-start; }
+
+/* ---------- Scroll-Reveal (Inhalte fliegen beim Scrollen sanft ein) ---------- */
+.reveal {
+opacity: 0;
+transform: translateY(22px);
+transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in {
+opacity: 1;
+transform: none;
+}
+/* Gestaffelte Verzögerung für Kind-Elemente einer Gruppe (z.B. Card-Grid), per JS gesetzt */
+.reveal[style*="--rv-delay"] { transition-delay: var(--rv-delay, 0s); }
+
+/* Wer Reduced-Motion eingestellt hat, bekommt keine Bewegung — Inhalte sind sofort da */
+@media (prefers-reduced-motion: reduce) {
+.reveal, .reveal.in {
+opacity: 1;
+transform: none;
+transition: none;
+}
+}
