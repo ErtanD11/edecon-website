@@ -77,6 +77,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // EmailJS: sendet dem Absender eine automatische Bestätigungsmail (zusätzlich zur
+  // Formspree-Benachrichtigung an Ertan). Bewusst "fire and forget" — ein Fehler hier
+  // darf die eigentliche Formular-Übermittlung an Formspree nicht beeinflussen.
+  if (window.emailjs) {
+    window.emailjs.init({ publicKey: '3QHj7ADn991avAlxI' });
+  }
+
+  function sendAutoResponse(form) {
+    if (!window.emailjs) return;
+
+    const data = new FormData(form);
+    const email = data.get('email');
+    if (!email) return;
+
+    // Name-Feld unterscheidet sich je Formular: Kontaktformular hat vorname/nachname,
+    // Bedarfsanalyse hat ansprechpartner.
+    let name = data.get('ansprechpartner');
+    if (!name) {
+      const vorname = data.get('vorname') || '';
+      const nachname = data.get('nachname') || '';
+      name = `${vorname} ${nachname}`.trim();
+    }
+    if (!name) name = 'Ihnen';
+
+    window.emailjs.send('service_n1jbt3e', 'template_bypn64q', {
+      to_email: email,
+      to_name: name
+    }).catch((err) => {
+      console.warn('EmailJS-Bestätigungsmail konnte nicht gesendet werden:', err);
+    });
+  }
+
   // Gemeinsame Submit-Logik: sendet das Formular per fetch() an Formspree (action-Attribut),
   // zeigt bei Erfolg die bestehende Bestätigung, bei Fehler eine Fallback-Meldung mit Mail-Hinweis.
   function wireFormSubmit(form) {
@@ -98,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (response.ok) {
           btn.textContent = 'Vielen Dank! Ich melde mich zeitnah.';
+          sendAutoResponse(form);
           form.reset();
         } else {
           throw new Error('Formspree-Fehler');
