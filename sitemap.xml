@@ -101,4 +101,37 @@
 
 </url>
 
+
+<url>
+
+<loc>https://www.edecon.de/blog.html</loc>
+
+<changefreq>monthly</changefreq>
+
+<priority>0.6</priority>
+
+</url>
+
+
+<url>
+
+<loc>https://www.edecon.de/organisationsstruktur-wachstum.html</loc>
+
+<changefreq>yearly</changefreq>
+
+<priority>0.5</priority>
+
+</url>
+
+
+<url>
+
+<loc>https://www.edecon.de/netzwerk-marktkenntnis-vertrieb.html</loc>
+
+<changefreq>yearly</changefreq>
+
+<priority>0.5</priority>
+
+</url>
+
 </urlset>
