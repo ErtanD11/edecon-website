@@ -36,10 +36,63 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" style="padding-bottom: 0;">
   <div class="container">
-    <div class="job-list">
-      <article class="job-card">
+    <form class="filter-bar" id="job-filters">
+      <div class="filter-group">
+        <label for="f-bereich">Bereich</label>
+        <select id="f-bereich" data-filter="bereich">
+          <option value="">Alle</option>
+          <option value="Recruiting Consultant">Recruiting Consultant</option>
+          <option value="Sales Consultant">Sales Consultant</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="f-seniority">Seniorität</label>
+        <select id="f-seniority" data-filter="seniority">
+          <option value="">Alle</option>
+          <option value="Junior">Junior</option>
+          <option value="Consultant">Consultant</option>
+          <option value="Senior">Senior</option>
+          <option value="Führungskraft">Führungskraft</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="f-region">Standort</label>
+        <select id="f-region" data-filter="region">
+          <option value="">Alle</option>
+          <option value="Dortmund">Dortmund</option>
+          <option value="Frankfurt">Frankfurt</option>
+          <option value="München">München</option>
+          <option value="Rhein-Neckar-Gebiet">Rhein-Neckar-Gebiet</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="f-branche">Branche</label>
+        <select id="f-branche" data-filter="branche">
+          <option value="">Alle</option>
+          <option value="Engineering">Engineering</option>
+          <option value="IT">IT</option>
+          <option value="Life Science">Life Science</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="f-vertragsart">Vertragsart</label>
+        <select id="f-vertragsart" data-filter="vertragsart">
+          <option value="">Alle</option>
+          <option value="Festanstellung beim Auftraggeber">Festanstellung beim Auftraggeber</option>
+        </select>
+      </div>
+      <button type="button" id="f-reset" class="filter-reset">Filter zurücksetzen</button>
+    </form>
+    <p id="job-count" class="job-count"></p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: var(--space-md);">
+  <div class="container">
+    <div class="job-list" id="job-list">
+      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Consultant" data-region="Rhein-Neckar-Gebiet" data-branche="IT" data-vertragsart="Festanstellung beim Auftraggeber">
         <div class="job-card-head">
           <div>
             <h3>Sales Consultant (m/w/d)</h3>
@@ -59,7 +112,7 @@
           <a class="btn btn-secondary" href="stellen/sales-consultant-m-w-d-heidelberg-edecon-1001.html">Details ansehen</a>
         </div>
       </article>
-      <article class="job-card">
+      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Senior" data-region="München" data-branche="IT" data-vertragsart="Festanstellung beim Auftraggeber">
         <div class="job-card-head">
           <div>
             <h3>Senior Sales Consultant (m/w/d)</h3>
@@ -79,7 +132,7 @@
           <a class="btn btn-secondary" href="stellen/senior-sales-consultant-m-w-d-muenchen-edecon-1002.html">Details ansehen</a>
         </div>
       </article>
-      <article class="job-card">
+      <article class="job-card" data-bereich="Recruiting Consultant" data-seniority="Senior" data-region="Rhein-Neckar-Gebiet" data-branche="IT" data-vertragsart="Festanstellung beim Auftraggeber">
         <div class="job-card-head">
           <div>
             <h3>Senior Recruiting Consultant (m/w/d)</h3>
@@ -99,7 +152,7 @@
           <a class="btn btn-secondary" href="stellen/senior-recruiting-consultant-m-w-d-heidelberg-edecon-1003.html">Details ansehen</a>
         </div>
       </article>
-      <article class="job-card">
+      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Junior" data-region="München" data-branche="Life Science" data-vertragsart="Festanstellung beim Auftraggeber">
         <div class="job-card-head">
           <div>
             <h3>Junior Sales Consultant (m/w/d)</h3>
@@ -119,7 +172,7 @@
           <a class="btn btn-secondary" href="stellen/junior-sales-consultant-m-w-d-muenchen-edecon-1004.html">Details ansehen</a>
         </div>
       </article>
-      <article class="job-card">
+      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Senior" data-region="München" data-branche="Life Science" data-vertragsart="Festanstellung beim Auftraggeber">
         <div class="job-card-head">
           <div>
             <h3>Senior Sales Consultant (m/w/d)</h3>
@@ -139,7 +192,7 @@
           <a class="btn btn-secondary" href="stellen/senior-sales-consultant-m-w-d-muenchen-edecon-1005.html">Details ansehen</a>
         </div>
       </article>
-      <article class="job-card">
+      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Führungskraft" data-region="Frankfurt" data-branche="IT" data-vertragsart="Festanstellung beim Auftraggeber">
         <div class="job-card-head">
           <div>
             <h3>Business Unit Manager Banking (m/w/d)</h3>
@@ -159,7 +212,7 @@
           <a class="btn btn-secondary" href="stellen/business-unit-manager-banking-m-w-d-frankfurt-edecon-1006.html">Details ansehen</a>
         </div>
       </article>
-      <article class="job-card">
+      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Senior" data-region="Dortmund" data-branche="IT" data-vertragsart="Festanstellung beim Auftraggeber">
         <div class="job-card-head">
           <div>
             <h3>Sales Consultant (m/w/d)</h3>
@@ -179,7 +232,7 @@
           <a class="btn btn-secondary" href="stellen/sales-consultant-m-w-d-dortmund-edecon-1007.html">Details ansehen</a>
         </div>
       </article>
-      <article class="job-card">
+      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Senior" data-region="Dortmund" data-branche="Engineering" data-vertragsart="Festanstellung beim Auftraggeber">
         <div class="job-card-head">
           <div>
             <h3>Sales Consultant (m/w/d)</h3>
@@ -200,6 +253,10 @@
         </div>
       </article>
     </div>
+    <div id="no-results" class="job-template-note" style="display:none;">
+      <strong>Aktuell keine passende Position gefunden.</strong> Wir stehen regelmäßig im Austausch mit Unternehmen aus der Personaldienstleistungsbranche – auch außerhalb konkret ausgeschriebener Vakanzen. Schicken Sie uns gerne Ihre Unterlagen initiativ.
+      <div class="mt-lg"><a class="btn btn-primary" href="mailto:ertan.demirel@edecon.de?subject=Initiativbewerbung">Initiativ bewerben</a></div>
+    </div>
   </div>
 </section>
 
@@ -218,5 +275,47 @@
     <p>&copy; 2026 edeCON &middot; people &amp; organisations</p>
   </div>
 </footer>
+
+<script>
+(function() {
+  var filters = ["bereich", "seniority", "region", "branche", "vertragsart"];
+  var cards = Array.prototype.slice.call(document.querySelectorAll("#job-list .job-card"));
+  var countEl = document.getElementById("job-count");
+  var noResults = document.getElementById("no-results");
+
+  function applyFilters() {
+    var active = {};
+    filters.forEach(function(f) {
+      var el = document.getElementById("f-" + (f === "seniority" ? "seniority" : f));
+      active[f] = el ? el.value : "";
+    });
+    var visible = 0;
+    cards.forEach(function(card) {
+      var match = filters.every(function(f) {
+        return !active[f] || card.getAttribute("data-" + f) === active[f];
+      });
+      card.style.display = match ? "" : "none";
+      if (match) visible++;
+    });
+    countEl.textContent = visible === cards.length
+      ? cards.length + " offene Positionen"
+      : visible + " von " + cards.length + " Positionen";
+    noResults.style.display = visible === 0 ? "block" : "none";
+  }
+
+  filters.forEach(function(f) {
+    var el = document.getElementById("f-" + f);
+    if (el) el.addEventListener("change", applyFilters);
+  });
+  document.getElementById("f-reset").addEventListener("click", function() {
+    filters.forEach(function(f) {
+      var el = document.getElementById("f-" + f);
+      if (el) el.value = "";
+    });
+    applyFilters();
+  });
+  applyFilters();
+})();
+</script>
 </body>
 </html>
