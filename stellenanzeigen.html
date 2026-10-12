@@ -36,180 +36,84 @@
   </div>
 </section>
 
-<section class="section" style="padding-bottom: 0;">
+<section class="section" style="padding-top: 0; padding-bottom: var(--space-md);">
   <div class="container">
-    <form class="filter-bar" id="job-filters">
-      <div class="filter-group">
-        <label for="f-bereich">Bereich</label>
-        <select id="f-bereich" data-filter="bereich">
-          <option value="">Alle</option>
+    <div class="filter-panel">
+      <form class="filter-bar" id="job-filters">
+        <div class="filter-group">
+          <label for="f-bereich">Bereich</label>
+          <select id="f-bereich" data-filter="bereich">
+            <option value="">Alle</option>
           <option value="Recruiting Consultant">Recruiting Consultant</option>
           <option value="Sales Consultant">Sales Consultant</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="f-seniority">Seniorität</label>
-        <select id="f-seniority" data-filter="seniority">
-          <option value="">Alle</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="f-seniority">Seniorität</label>
+          <select id="f-seniority" data-filter="seniority">
+            <option value="">Alle</option>
           <option value="Junior">Junior</option>
           <option value="Consultant">Consultant</option>
           <option value="Senior">Senior</option>
           <option value="Führungskraft">Führungskraft</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="f-region">Standort</label>
-        <select id="f-region" data-filter="region">
-          <option value="">Alle</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="f-region">Standort</label>
+          <select id="f-region" data-filter="region">
+            <option value="">Alle</option>
           <option value="Dortmund">Dortmund</option>
           <option value="Frankfurt">Frankfurt</option>
           <option value="München">München</option>
           <option value="Rhein-Neckar-Gebiet">Rhein-Neckar-Gebiet</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="f-branche">Branche</label>
-        <select id="f-branche" data-filter="branche">
-          <option value="">Alle</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="f-branche">Branche</label>
+          <select id="f-branche" data-filter="branche">
+            <option value="">Alle</option>
           <option value="Engineering">Engineering</option>
           <option value="IT">IT</option>
           <option value="Life Science">Life Science</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="f-vertragsart">Vertragsart</label>
-        <select id="f-vertragsart" data-filter="vertragsart">
-          <option value="">Alle</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="f-vertragsart">Vertragsart</label>
+          <select id="f-vertragsart" data-filter="vertragsart">
+            <option value="">Alle</option>
           <option value="Festanstellung beim Auftraggeber">Festanstellung beim Auftraggeber</option>
-        </select>
+          </select>
+        </div>
+      </form>
+      <div class="filter-toolbar-foot">
+        <p id="job-count" class="job-count"></p>
+        <button type="button" id="f-reset" class="filter-reset">&times; Filter zurücksetzen</button>
       </div>
-      <button type="button" id="f-reset" class="filter-reset">Filter zurücksetzen</button>
-    </form>
-    <p id="job-count" class="job-count"></p>
+    </div>
   </div>
 </section>
 
 <section class="section" style="padding-top: var(--space-md);">
   <div class="container">
     <div class="job-list" id="job-list">
-      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Consultant" data-region="Rhein-Neckar-Gebiet" data-branche="IT" data-vertragsart="Festanstellung beim Auftraggeber">
+      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Senior" data-region="Dortmund" data-branche="Engineering" data-vertragsart="Festanstellung beim Auftraggeber">
         <div class="job-card-head">
           <div>
             <h3>Sales Consultant (m/w/d)</h3>
             <div class="job-meta">
-              <span>Rhein-Neckar-Gebiet</span>
-              <span>IT</span>
-              <span>Consultant</span>
-              <span>Festanstellung beim Auftraggeber</span>
-            </div>
-          </div>
-          <span class="badge-pill">Kennziffer edeCON-1001</span>
-        </div>
-        <div class="job-card-body">
-          <p style="color:var(--ink-soft); font-size:0.98rem;">Für unseren Auftraggeber, einen mehrfach ausgezeichneten IT-Personaldienstleister im Rhein-Neckar-Gebiet, suchen wir einen Sales Consultant zur Betreuung und zum Ausbau des Kundenportfolios.</p>
-        </div>
-        <div class="job-card-actions">
-          <a class="btn btn-secondary" href="stellen/sales-consultant-m-w-d-heidelberg-edecon-1001.html">Details ansehen</a>
-        </div>
-      </article>
-      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Senior" data-region="München" data-branche="IT" data-vertragsart="Festanstellung beim Auftraggeber">
-        <div class="job-card-head">
-          <div>
-            <h3>Senior Sales Consultant (m/w/d)</h3>
-            <div class="job-meta">
-              <span>München</span>
-              <span>IT</span>
+              <span>Dortmund</span>
+              <span>Engineering</span>
               <span>Senior</span>
               <span>Festanstellung beim Auftraggeber</span>
             </div>
           </div>
-          <span class="badge-pill">Kennziffer edeCON-1002</span>
+          <span class="badge-pill">Kennziffer edeCON-1008</span>
         </div>
         <div class="job-card-body">
-          <p style="color:var(--ink-soft); font-size:0.98rem;">Für unseren Auftraggeber, einen Münchner Personaldienstleister mit Fokus auf die Vermittlung externer IT-Expert:innen an mittelständische Unternehmen, suchen wir einen erfahrenen Sales Consultant zum weiteren Ausbau des Kundengeschäfts.</p>
+          <p style="color:var(--ink-soft); font-size:0.98rem;">Für unseren Auftraggeber, einen etablierten und marktführenden Engineering- und IT-Dienstleister mit starker bundesweiter sowie internationaler Präsenz, suchen wir in der Region Dortmund einen erfahrenen Sales Consultant im Bereich Engineering zur strategischen Weiterentwicklung des Kundengeschäfts.</p>
         </div>
         <div class="job-card-actions">
-          <a class="btn btn-secondary" href="stellen/senior-sales-consultant-m-w-d-muenchen-edecon-1002.html">Details ansehen</a>
-        </div>
-      </article>
-      <article class="job-card" data-bereich="Recruiting Consultant" data-seniority="Senior" data-region="Rhein-Neckar-Gebiet" data-branche="IT" data-vertragsart="Festanstellung beim Auftraggeber">
-        <div class="job-card-head">
-          <div>
-            <h3>Senior Recruiting Consultant (m/w/d)</h3>
-            <div class="job-meta">
-              <span>Rhein-Neckar-Gebiet</span>
-              <span>IT</span>
-              <span>Senior</span>
-              <span>Festanstellung beim Auftraggeber</span>
-            </div>
-          </div>
-          <span class="badge-pill">Kennziffer edeCON-1003</span>
-        </div>
-        <div class="job-card-body">
-          <p style="color:var(--ink-soft); font-size:0.98rem;">Für unseren Auftraggeber, einen mehrfach ausgezeichneten IT-Personaldienstleister im Rhein-Neckar-Gebiet, suchen wir einen erfahrenen Recruiting Consultant zur strategischen Weiterentwicklung der Kandidatengewinnung.</p>
-        </div>
-        <div class="job-card-actions">
-          <a class="btn btn-secondary" href="stellen/senior-recruiting-consultant-m-w-d-heidelberg-edecon-1003.html">Details ansehen</a>
-        </div>
-      </article>
-      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Junior" data-region="München" data-branche="Life Science" data-vertragsart="Festanstellung beim Auftraggeber">
-        <div class="job-card-head">
-          <div>
-            <h3>Junior Sales Consultant (m/w/d)</h3>
-            <div class="job-meta">
-              <span>München</span>
-              <span>Life Science</span>
-              <span>Junior</span>
-              <span>Festanstellung beim Auftraggeber</span>
-            </div>
-          </div>
-          <span class="badge-pill">Kennziffer edeCON-1004</span>
-        </div>
-        <div class="job-card-body">
-          <p style="color:var(--ink-soft); font-size:0.98rem;">Für unseren Auftraggeber, eine auf die Life-Science-Branche spezialisierte, am Markt fest etablierte Personalberatung mit Zentrale in München, suchen wir eine engagierte Nachwuchskraft im Vertrieb.</p>
-        </div>
-        <div class="job-card-actions">
-          <a class="btn btn-secondary" href="stellen/junior-sales-consultant-m-w-d-muenchen-edecon-1004.html">Details ansehen</a>
-        </div>
-      </article>
-      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Senior" data-region="München" data-branche="Life Science" data-vertragsart="Festanstellung beim Auftraggeber">
-        <div class="job-card-head">
-          <div>
-            <h3>Senior Sales Consultant (m/w/d)</h3>
-            <div class="job-meta">
-              <span>München</span>
-              <span>Life Science</span>
-              <span>Senior</span>
-              <span>Festanstellung beim Auftraggeber</span>
-            </div>
-          </div>
-          <span class="badge-pill">Kennziffer edeCON-1005</span>
-        </div>
-        <div class="job-card-body">
-          <p style="color:var(--ink-soft); font-size:0.98rem;">Für unseren Auftraggeber, eine auf die Life-Science-Branche spezialisierte, am Markt fest etablierte Personalberatung mit Zentrale in München, suchen wir einen erfahrenen Sales Consultant zur strategischen Weiterentwicklung des Kundengeschäfts.</p>
-        </div>
-        <div class="job-card-actions">
-          <a class="btn btn-secondary" href="stellen/senior-sales-consultant-m-w-d-muenchen-edecon-1005.html">Details ansehen</a>
-        </div>
-      </article>
-      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Führungskraft" data-region="Frankfurt" data-branche="IT" data-vertragsart="Festanstellung beim Auftraggeber">
-        <div class="job-card-head">
-          <div>
-            <h3>Business Unit Manager Banking (m/w/d)</h3>
-            <div class="job-meta">
-              <span>Frankfurt</span>
-              <span>IT</span>
-              <span>Führungskraft</span>
-              <span>Festanstellung beim Auftraggeber</span>
-            </div>
-          </div>
-          <span class="badge-pill">Kennziffer edeCON-1006</span>
-        </div>
-        <div class="job-card-body">
-          <p style="color:var(--ink-soft); font-size:0.98rem;">Für unseren Auftraggeber, einen etablierten und marktführenden Engineering- und IT-Dienstleister mit starker bundesweiter sowie internationaler Präsenz, suchen wir in Frankfurt eine Führungspersönlichkeit zur operativen und disziplinarischen Leitung eines Vertriebsteams mit Schwerpunkt Banking.</p>
-        </div>
-        <div class="job-card-actions">
-          <a class="btn btn-secondary" href="stellen/business-unit-manager-banking-m-w-d-frankfurt-edecon-1006.html">Details ansehen</a>
+          <a class="btn btn-secondary" href="stellen/sales-consultant-m-w-d-oelde-edecon-1008.html">Details ansehen</a>
         </div>
       </article>
       <article class="job-card" data-bereich="Sales Consultant" data-seniority="Senior" data-region="Dortmund" data-branche="IT" data-vertragsart="Festanstellung beim Auftraggeber">
@@ -232,24 +136,124 @@
           <a class="btn btn-secondary" href="stellen/sales-consultant-m-w-d-dortmund-edecon-1007.html">Details ansehen</a>
         </div>
       </article>
-      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Senior" data-region="Dortmund" data-branche="Engineering" data-vertragsart="Festanstellung beim Auftraggeber">
+      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Führungskraft" data-region="Frankfurt" data-branche="IT" data-vertragsart="Festanstellung beim Auftraggeber">
         <div class="job-card-head">
           <div>
-            <h3>Sales Consultant (m/w/d)</h3>
+            <h3>Business Unit Manager Banking (m/w/d)</h3>
             <div class="job-meta">
-              <span>Dortmund</span>
-              <span>Engineering</span>
+              <span>Frankfurt</span>
+              <span>IT</span>
+              <span>Führungskraft</span>
+              <span>Festanstellung beim Auftraggeber</span>
+            </div>
+          </div>
+          <span class="badge-pill">Kennziffer edeCON-1006</span>
+        </div>
+        <div class="job-card-body">
+          <p style="color:var(--ink-soft); font-size:0.98rem;">Für unseren Auftraggeber, einen etablierten und marktführenden Engineering- und IT-Dienstleister mit starker bundesweiter sowie internationaler Präsenz, suchen wir in Frankfurt eine Führungspersönlichkeit zur operativen und disziplinarischen Leitung eines Vertriebsteams mit Schwerpunkt Banking.</p>
+        </div>
+        <div class="job-card-actions">
+          <a class="btn btn-secondary" href="stellen/business-unit-manager-banking-m-w-d-frankfurt-edecon-1006.html">Details ansehen</a>
+        </div>
+      </article>
+      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Senior" data-region="München" data-branche="Life Science" data-vertragsart="Festanstellung beim Auftraggeber">
+        <div class="job-card-head">
+          <div>
+            <h3>Senior Sales Consultant (m/w/d)</h3>
+            <div class="job-meta">
+              <span>München</span>
+              <span>Life Science</span>
               <span>Senior</span>
               <span>Festanstellung beim Auftraggeber</span>
             </div>
           </div>
-          <span class="badge-pill">Kennziffer edeCON-1008</span>
+          <span class="badge-pill">Kennziffer edeCON-1005</span>
         </div>
         <div class="job-card-body">
-          <p style="color:var(--ink-soft); font-size:0.98rem;">Für unseren Auftraggeber, einen etablierten und marktführenden Engineering- und IT-Dienstleister mit starker bundesweiter sowie internationaler Präsenz, suchen wir in der Region Dortmund einen erfahrenen Sales Consultant im Bereich Engineering zur strategischen Weiterentwicklung des Kundengeschäfts.</p>
+          <p style="color:var(--ink-soft); font-size:0.98rem;">Für unseren Auftraggeber, eine auf die Life-Science-Branche spezialisierte, am Markt fest etablierte Personalberatung mit Zentrale in München, suchen wir einen erfahrenen Sales Consultant zur strategischen Weiterentwicklung des Kundengeschäfts.</p>
         </div>
         <div class="job-card-actions">
-          <a class="btn btn-secondary" href="stellen/sales-consultant-m-w-d-oelde-edecon-1008.html">Details ansehen</a>
+          <a class="btn btn-secondary" href="stellen/senior-sales-consultant-m-w-d-muenchen-edecon-1005.html">Details ansehen</a>
+        </div>
+      </article>
+      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Junior" data-region="München" data-branche="Life Science" data-vertragsart="Festanstellung beim Auftraggeber">
+        <div class="job-card-head">
+          <div>
+            <h3>Junior Sales Consultant (m/w/d)</h3>
+            <div class="job-meta">
+              <span>München</span>
+              <span>Life Science</span>
+              <span>Junior</span>
+              <span>Festanstellung beim Auftraggeber</span>
+            </div>
+          </div>
+          <span class="badge-pill">Kennziffer edeCON-1004</span>
+        </div>
+        <div class="job-card-body">
+          <p style="color:var(--ink-soft); font-size:0.98rem;">Für unseren Auftraggeber, eine auf die Life-Science-Branche spezialisierte, am Markt fest etablierte Personalberatung mit Zentrale in München, suchen wir eine engagierte Nachwuchskraft im Vertrieb.</p>
+        </div>
+        <div class="job-card-actions">
+          <a class="btn btn-secondary" href="stellen/junior-sales-consultant-m-w-d-muenchen-edecon-1004.html">Details ansehen</a>
+        </div>
+      </article>
+      <article class="job-card" data-bereich="Recruiting Consultant" data-seniority="Senior" data-region="Rhein-Neckar-Gebiet" data-branche="IT" data-vertragsart="Festanstellung beim Auftraggeber">
+        <div class="job-card-head">
+          <div>
+            <h3>Senior Recruiting Consultant (m/w/d)</h3>
+            <div class="job-meta">
+              <span>Rhein-Neckar-Gebiet</span>
+              <span>IT</span>
+              <span>Senior</span>
+              <span>Festanstellung beim Auftraggeber</span>
+            </div>
+          </div>
+          <span class="badge-pill">Kennziffer edeCON-1003</span>
+        </div>
+        <div class="job-card-body">
+          <p style="color:var(--ink-soft); font-size:0.98rem;">Für unseren Auftraggeber, einen mehrfach ausgezeichneten IT-Personaldienstleister im Rhein-Neckar-Gebiet, suchen wir einen erfahrenen Recruiting Consultant zur strategischen Weiterentwicklung der Kandidatengewinnung.</p>
+        </div>
+        <div class="job-card-actions">
+          <a class="btn btn-secondary" href="stellen/senior-recruiting-consultant-m-w-d-heidelberg-edecon-1003.html">Details ansehen</a>
+        </div>
+      </article>
+      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Senior" data-region="München" data-branche="IT" data-vertragsart="Festanstellung beim Auftraggeber">
+        <div class="job-card-head">
+          <div>
+            <h3>Senior Sales Consultant (m/w/d)</h3>
+            <div class="job-meta">
+              <span>München</span>
+              <span>IT</span>
+              <span>Senior</span>
+              <span>Festanstellung beim Auftraggeber</span>
+            </div>
+          </div>
+          <span class="badge-pill">Kennziffer edeCON-1002</span>
+        </div>
+        <div class="job-card-body">
+          <p style="color:var(--ink-soft); font-size:0.98rem;">Für unseren Auftraggeber, einen Münchner Personaldienstleister mit Fokus auf die Vermittlung externer IT-Expert:innen an mittelständische Unternehmen, suchen wir einen erfahrenen Sales Consultant zum weiteren Ausbau des Kundengeschäfts.</p>
+        </div>
+        <div class="job-card-actions">
+          <a class="btn btn-secondary" href="stellen/senior-sales-consultant-m-w-d-muenchen-edecon-1002.html">Details ansehen</a>
+        </div>
+      </article>
+      <article class="job-card" data-bereich="Sales Consultant" data-seniority="Consultant" data-region="Rhein-Neckar-Gebiet" data-branche="IT" data-vertragsart="Festanstellung beim Auftraggeber">
+        <div class="job-card-head">
+          <div>
+            <h3>Sales Consultant (m/w/d)</h3>
+            <div class="job-meta">
+              <span>Rhein-Neckar-Gebiet</span>
+              <span>IT</span>
+              <span>Consultant</span>
+              <span>Festanstellung beim Auftraggeber</span>
+            </div>
+          </div>
+          <span class="badge-pill">Kennziffer edeCON-1001</span>
+        </div>
+        <div class="job-card-body">
+          <p style="color:var(--ink-soft); font-size:0.98rem;">Für unseren Auftraggeber, einen mehrfach ausgezeichneten IT-Personaldienstleister im Rhein-Neckar-Gebiet, suchen wir einen Sales Consultant zur Betreuung und zum Ausbau des Kundenportfolios.</p>
+        </div>
+        <div class="job-card-actions">
+          <a class="btn btn-secondary" href="stellen/sales-consultant-m-w-d-heidelberg-edecon-1001.html">Details ansehen</a>
         </div>
       </article>
     </div>
@@ -297,9 +301,9 @@
       card.style.display = match ? "" : "none";
       if (match) visible++;
     });
-    countEl.textContent = visible === cards.length
-      ? cards.length + " offene Positionen"
-      : visible + " von " + cards.length + " Positionen";
+    countEl.innerHTML = visible === cards.length
+      ? "<strong>" + cards.length + "</strong> offene Positionen"
+      : "<strong>" + visible + "</strong> von " + cards.length + " Positionen";
     noResults.style.display = visible === 0 ? "block" : "none";
   }
 
