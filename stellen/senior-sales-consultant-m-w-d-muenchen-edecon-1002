@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Senior Sales Consultant (m/w/d) (edeCON-1002) | edeCON Stellenanzeigen</title>
+<meta name="description" content="Für unseren Auftraggeber, einen Münchner Personaldienstleister mit Fokus auf die Vermittlung externer IT-Expert:innen an mittelständische Unternehmen, such">
+<link rel="stylesheet" href="../styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" style="font-family: var(--font-serif); font-weight:700; font-size:1.3rem; color:var(--navy-900);">edeCON</a>
+    <nav class="nav-main">
+      <div class="nav-links">
+        <a href="../unternehmensberatung.html">Unternehmensberatung</a>
+        <a href="../personalberatung.html">Personalberatung</a>
+        <a href="../ueber-mich.html">Über mich</a>
+        <a href="../stellenanzeigen.html" class="active">Stellenanzeigen</a>
+      </div>
+      <div class="nav-cta">
+        <a href="../kontakt.html" class="btn btn-secondary">Erstgespräch buchen</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Start</a> / <a href="../stellenanzeigen.html">Stellenanzeigen</a> / Senior Sales Consultant (m/w/d)</div>
+    <span class="badge-pill">Kennziffer edeCON-1002</span>
+    <h1 class="h1">Senior Sales Consultant (m/w/d)</h1>
+    <p class="lede">München &middot; Festanstellung beim Auftraggeber &middot; IT</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container layout-2col">
+    <div class="job-card-body">
+      <h4>Kurzbeschreibung</h4>
+      <p style="color:var(--ink-soft); font-size:1.02rem;">Für unseren Auftraggeber, einen Münchner Personaldienstleister mit Fokus auf die Vermittlung externer IT-Expert:innen an mittelständische Unternehmen, suchen wir einen erfahrenen Sales Consultant zum weiteren Ausbau des Kundengeschäfts.</p>
+
+      <h4>Ihre Aufgaben</h4>
+      <ul><li>Verantwortung für ein definiertes IT-Kundenportfolio</li><li>Strategische Weiterentwicklung bestehender Kundenbeziehungen</li><li>Neukundenakquise auf Entscheiderebene</li><li>Enge Abstimmung mit dem Recruiting-Team</li><li>Direkter Kontakt zu Entscheider:innen wie CTOs und IT-Leitungen im Mittelstand</li></ul>
+
+      <h4>Ihr Profil</h4>
+      <ul><li>3-5 Jahre Erfahrung im Vertrieb der IT-Personaldienstleistung, idealerweise im Projektgeschäft</li><li>Interesse an technologiegestützten Vertriebsprozessen</li><li>Verhandlungssicherheit auf Managementebene</li></ul>
+
+      <h4>Das bietet Ihnen unser Auftraggeber</h4>
+      <ul><li>Remote-Arbeit möglich, unbefristeter Vertrag</li><li>Flache Hierarchien und leistungsorientierte Vergütung</li><li>Regelmäßige Workshops, Coaching und Teamevents über die Standorte München, Frankfurt und Stuttgart hinweg</li></ul>
+
+      <h4>Das bietet Ihnen edeCON</h4>
+      <p style="color:var(--ink-soft); font-size:1.02rem;">edeCON begleitet Sie auf Basis von über 25 Jahren Erfahrung in der Personaldienstleistungsbranche und fundierter Marktkenntnis auf Kunden- wie auf Kandidatenseite – keine reine Lebenslauf-Vermittlung, sondern eine realistische Einschätzung zu Anforderungen und marktgerechten Konditionen. Ziel ist eine Besetzung, die nicht nur schnell, sondern vor allem passend ist.</p>
+
+      <div class="job-card-actions">
+        <a class="btn btn-primary btn-lg" href="mailto:ertan.demirel@edecon.de?subject=Bewerbung%20edeCON-1002%20-%20Senior%20Sales%20Consultant%20%28m/w/d%29">Jetzt bewerben</a>
+        <a class="btn btn-secondary btn-lg" href="../stellenanzeigen.html">Zurück zur Übersicht</a>
+      </div>
+    </div>
+
+    <aside class="sidebar-card">
+      <h4>Auf einen Blick</h4>
+      <ul>
+        <li>Kennziffer: edeCON-1002</li>
+        <li>Standort: München</li>
+        <li>Vertragsart: Festanstellung beim Auftraggeber</li>
+        <li>Branche: IT</li>
+        <li>Seniorität: Senior</li>
+      </ul>
+      <h4 class="mt-lg">Ihr Ansprechpartner</h4>
+      <ul>
+        <li>Ertan Demirel</li>
+        <li>+49 162 2910001</li>
+        <li><a href="mailto:ertan.demirel@edecon.de">ertan.demirel@edecon.de</a></li>
+      </ul>
+      <h4 class="mt-lg">Über den Auftraggeber</h4>
+      <ul>
+        <li>Unser Auftraggeber ist ein Münchner Personaldienstleister mit Fokus auf die Vermittlung externer IT-Expert:innen an mittelständische Unternehmen. Technologiegestütztes Matching wird mit persönlicher Beratung kombiniert, was zu vielen erfolgreichen Besetzungen führt.</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 edeCON &middot; people &amp; organisations</p>
+  </div>
+</footer>
+</body>
+</html>
